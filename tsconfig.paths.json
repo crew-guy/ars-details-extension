@@ -1,0 +1,24 @@
+{
+	"compilerOptions": {
+		"forceConsistentCasingInFileNames": true,
+		"importHelpers": true,
+		"removeComments": true,
+		"strict": true,
+		"baseUrl": "./",
+		"paths": {
+			"@components/*": ["./src/components/*"],
+			"@contexts/*": ["./src/contexts/*"],
+			"@pages/*": ["./src/pages/*"],
+			"@widgets": ["./src/components/widgets"],
+			"@features/*": ["./src/redux/features/*"],
+			"@actions/*": ["./src/redux/actions/*"],
+			"@redux/*": ["./src/redux/*"],
+			"@services/*": ["./src/services/*"],
+			"@styles/*": ["./src/assets/css/*"],
+			"@helpers/*": ["./src/helpers/*"],
+			"@images/*": ["./src/assets/images"],
+			"@hooks/*": ["./src/hooks/*"],
+			"@router/*": ["./src/router/*"]
+		}
+	}
+}

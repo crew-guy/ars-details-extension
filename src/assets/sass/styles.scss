@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+@font-face {
+	font-family: 'Regular';
+	src: url('../fonts/SF\ Pro.OTF');
+}
+@font-face {
+	font-family: 'Light';
+	src: url('../fonts/SF\ Pro\ Light.OTF');
+}
+@font-face {
+	font-family: 'Medium';
+	src: url('../fonts/SF\ Pro\ Medium.OTF');
+}
+@font-face {
+	font-family: 'Bold';
+	src: url('../fonts/SF\ Pro\ Bold.OTF');
+}
+
+$lightGrey: rgb(241, 241, 241);
+
+* {
+	margin: 0;
+	background: white;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Regular';
+}
+
+@mixin flexbox($flexDirection, $justifyContent, $alignItems) {
+	display: flex;
+	flex-direction: $flexDirection;
+	justify-content: $justifyContent;
+	align-items: $alignItems;
+}
+
+.title {
+	width: 100%;
+	background: black;
+	padding: 1rem 2rem;
+	color: white;
+	font-size: 1.6rem;
+	@include flexbox(row, center, center);
+	text-align: center;
+}
+
+.links-container {
+	margin: 1.3rem;
+	@include flexbox(column, flex-start, flex-start);
+	width: 100%;
+	.link-container {
+		background: $lightGrey;
+		font-family: 'Regular';
+		font-size: 1rem;
+		@include flexbox(row, space-between, center);
+		padding: 0.7rem;
+		margin-bottom: 1rem;
+		cursor: pointer;
+		border-radius: 0.6rem;
+		transition: 0.3s ease-in;
+		position: relative;
+		&::before {
+			transition: 0.3s ease-in;
+		}
+		.info-container {
+			@include flexbox(row, flex-start, center);
+			.img-container {
+				@include flexbox(row, center, center);
+				padding: 0.4rem;
+				background: $lightGrey;
+				img {
+					height: 1.5rem;
+				}
+			}
+			p {
+				margin-left: 0.3rem;
+				margin-right: 5rem;
+				font-family: 'Regular';
+				text-decoration: none;
+				background: $lightGrey;
+				color: black;
+				font-size: 1.3rem;
+				font-weight: 300;
+			}
+			background: $lightGrey;
+		}
+		.action-container {
+			background: $lightGrey;
+			@include flexbox(row, center, center);
+			img {
+				height: 1.4rem;
+				background: $lightGrey;
+				margin-left: 0.4rem;
+			}
+			a {
+				background: $lightGrey;
+			}
+		}
+		&.clicked {
+			&::before {
+				position: absolute;
+				content: 'Copied to clipboard';
+				top: 0;
+				left: 0;
+				width: 100%;
+				border-radius: 0.6rem;
+				@include flexbox(row, center, center);
+				height: 100%;
+				background: rgba(0, 0, 0, 0.3);
+				color: white;
+				font-size: 1.1rem;
+				z-index: 2;
+				backdrop-filter: blur(2px);
+			}
+		}
+	}
+}
