@@ -46,8 +46,7 @@ $lightGrey: rgb(241, 241, 241);
 
 .links-container {
 	margin: 1.3rem;
-	@include flexbox(column, flex-start, flex-start);
-	width: 100%;
+	@include flexbox(column, flex-start, stretch);
 	.link-container {
 		background: $lightGrey;
 		font-family: 'Regular';
@@ -70,6 +69,7 @@ $lightGrey: rgb(241, 241, 241);
 				background: $lightGrey;
 				img {
 					height: 1.5rem;
+					border-radius: 0.3rem;
 				}
 			}
 			p {

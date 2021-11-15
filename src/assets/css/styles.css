@@ -62,10 +62,9 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  width: 100%;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 .links-container .link-container {
@@ -136,6 +135,7 @@
 
 .links-container .link-container .info-container .img-container img {
   height: 1.5rem;
+  border-radius: 0.3rem;
 }
 
 .links-container .link-container .info-container p {

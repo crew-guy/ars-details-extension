@@ -32,6 +32,7 @@ const Link: React.FC<LinkI> = ({ text, imgSrc, address }) => {
             </div>
             <div className="action-container">
                 <img src={copy} alt="copy" onClick={handleClick} />
+                {/* eslint-disable-next-line */}
                 <a onClick={(e: any) => { e.stopPropagation()}} href={address} target="_blank" >
                     <img src={goto} alt="go to"/>
                 </a>
