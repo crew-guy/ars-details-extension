@@ -4,11 +4,17 @@ import './App.css';
 import Link from './components/Link';
 import ars from './assets/images/ars.png'
 import github from './assets/images/github.png'
+const psl = require('psl')
+
+interface LinkI {
+  imgSrc: string,
+  name: string,
+}
 
 function App() {
   return (
     <div className="App">
-      <h1 className="title">Link House</h1>
+      <h1 className="title">Quick Links</h1>
       <div className="links-container">
         <Link
           imgSrc={getFavicon("https://www.linkedin.com/in/ankit-sanghvi-99237b1a0/")}
@@ -37,7 +43,12 @@ function App() {
 }
 
 const getFavicon = (string: string) => {
-  return `https://s2.googleusercontent.com/s2/favicons?domain_url=${string}`
+  //? Via regex
+  // const reg = new RegExp("/^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n?]+)/img")
+
+  //? Via the pkg "psl"
+  const hostname = psl.parse(string).domain
+  return `https://s2.googleusercontent.com/s2/favicons?domain_url=${hostname}`
 }
 
 export default App;
