@@ -11,12 +11,12 @@ function App() {
       <h1 className="title">Link House</h1>
       <div className="links-container">
         <Link
-          imgSrc={getFavicon("linkedin.com")}
+          imgSrc={getFavicon("https://www.linkedin.com/in/ankit-sanghvi-99237b1a0/")}
           text={'LinkedIn'}
           address={"https://www.linkedin.com/in/ankit-sanghvi-99237b1a0/"}
         />
         <Link
-          imgSrc={ars}
+          imgSrc={getFavicon("https://blog.ankitsanghvi.live")}
           text={'Website'}
           address={"https://ankitsanghvi.live"}
         />
