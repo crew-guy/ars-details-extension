@@ -39,7 +39,7 @@ function App() {
         <Link
           imgSrc={getFavicon("calendly.com")}
           text={'Calendly'}
-          address={"https://calendly.com/ankit-sanghvi"}
+          address={"https://calendly.com/ankit-sanghvi/discuss"}
         />
 
       </div>
