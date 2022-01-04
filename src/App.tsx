@@ -36,6 +36,11 @@ function App() {
           text={'Blog'}
           address={"https://blog.ankitsanghvi.live"}
         />
+        <Link
+          imgSrc={getFavicon("calendly.com")}
+          text={'Calendly'}
+          address={"https://calendly.com/ankit-sanghvi"}
+        />
 
       </div>
     </div>
