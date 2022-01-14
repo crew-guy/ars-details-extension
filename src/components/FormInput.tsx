@@ -3,7 +3,7 @@ import React from 'react'
 
 interface IFormInput{
     label: string,
-    handleChange: ()=>void,
+    handleChange: (e:any)=>void,
     value:string
 }
 
