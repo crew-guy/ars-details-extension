@@ -6,9 +6,7 @@ function App() {
   return (
     <div className="App">
       <h1 className="title">Quick Links</h1>
-      <div className="links-container">
-    
-      </div>
+      
     </div>
   );
 }

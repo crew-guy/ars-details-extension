@@ -1,16 +1,19 @@
-import { LinkI } from '@features/linkSlice'
+import { deleteLink, LinkI } from '@features/linkSlice'
 import React, { useRef, useState } from 'react'
 import deleteIcon from '../assets/images/delete.png'
 import copy from '../assets/images/copy.png'
 import edit from '../assets/images/edit.png'
 import save from '../assets/images/save.png'
 import goto from '../assets/images/goto.png'
+import { useDispatch } from 'react-redux'
+import { AppDispatch } from '@redux/store'
+import LinkForm from './LinkForm'
 
 
 const Link: React.FC<LinkI> = ({ id, text, imgSrc, address }) => {
     const ref = useRef<HTMLDivElement>(null)
     const [isEditing, setIsEditing] = useState<boolean>(false)
-
+    const dispatch:AppDispatch = useDispatch()
 
     const handleClick = () => {
         const el = ref.current!
@@ -37,7 +40,8 @@ const Link: React.FC<LinkI> = ({ id, text, imgSrc, address }) => {
                     <img src={goto} alt="go to"/>
                 </a>
                 <img src={isEditing ? edit : save} alt="edit_link" onClick={() => setIsEditing((prevState) => !prevState)} />
-                <img src={deleteIcon} alt="edit_link" onClick={()=>console.log('delete')} />
+                {isEditing && <LinkForm id={id} address={address} imgSrc={imgSrc} text={text} />}
+                <img src={deleteIcon} alt="edit_link" onClick={()=> dispatch(deleteLink(id))} />
                 
             </div>
         </div>

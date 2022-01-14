@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { v4 as uuidv4 } from 'uuid';
 
 export interface LinkI {
   id:string,
@@ -9,6 +10,12 @@ export interface LinkI {
 
 interface LinksState{
   links: LinkI[];
+}
+
+interface CreateLinkI{
+  text: string,
+  imgSrc: string,
+  address:string
 }
 
 interface UpdateLinkI{
@@ -25,8 +32,8 @@ export const LinkSlice = createSlice({
   name: "Link",
   initialState,
   reducers: {
-    addLink: (state: LinksState, action: PayloadAction<LinkI>) => {
-      state.links.push(action.payload);
+    addLink: (state: LinksState, action: PayloadAction<CreateLinkI>) => {
+      state.links.push({id:uuidv4(), ...action.payload});
     },
     updateLink: (state: LinksState, action: PayloadAction<UpdateLinkI>) => {
       state.links = state.links.map(link => link.id === action.payload.id ? {...link, ...action.payload} : link);
