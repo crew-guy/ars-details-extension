@@ -19,7 +19,7 @@ const LinkForm:React.FC<ILinkForm> = ({ id, address,imgSrc, text}) => {
         text: text
     })
     return (
-        <form className='flex flex-col items-stretch justify-start p-2 rounded-md bg-gray-300 mt-4' >
+        <form className='link-form' >
             <FormInput
                 label="Link Name"
                 handleChange={(e:any) => setInputs({...inputs, text: e.target.value})}
@@ -36,7 +36,7 @@ const LinkForm:React.FC<ILinkForm> = ({ id, address,imgSrc, text}) => {
                 value={inputs.imgSrc}
             />
             <button
-                className="rounded-sm bg-gray-600 text-white font-semibold"
+                className="primary-button"
                 onClick={() => {
                     id === undefined ? dispatch(addLink(inputs)):dispatch(updateLink({id,...inputs}))
                 } }

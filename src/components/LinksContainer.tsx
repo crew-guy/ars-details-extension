@@ -20,7 +20,7 @@ const LinksContainer = () => {
                 />
             )}
             <button
-                className="rounded-sm bg-gray-600 my-2 text-white font-semibold"
+                className="primary-button"
                 onClick={() => {
                     setIsAdding((prevState) => !prevState)
                 }}
