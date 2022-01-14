@@ -1,11 +1,15 @@
 import { LinkI } from '@features/linkSlice'
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
+import deleteIcon from '../assets/images/delete.png'
 import copy from '../assets/images/copy.png'
+import edit from '../assets/images/edit.png'
+import save from '../assets/images/save.png'
 import goto from '../assets/images/goto.png'
 
 
 const Link: React.FC<LinkI> = ({ id, text, imgSrc, address }) => {
     const ref = useRef<HTMLDivElement>(null)
+    const [isEditing, setIsEditing] = useState<boolean>(false)
 
 
     const handleClick = () => {
@@ -32,6 +36,9 @@ const Link: React.FC<LinkI> = ({ id, text, imgSrc, address }) => {
                 <a onClick={(e: any) => { e.stopPropagation()}} href={address} target="_blank" >
                     <img src={goto} alt="go to"/>
                 </a>
+                <img src={isEditing ? edit : save} alt="edit_link" onClick={() => setIsEditing((prevState) => !prevState)} />
+                <img src={deleteIcon} alt="edit_link" onClick={()=>console.log('delete')} />
+                
             </div>
         </div>
     )
