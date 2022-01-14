@@ -35,13 +35,18 @@ const Link: React.FC<LinkI> = ({ id, text, imgSrc, address }) => {
                 <p className="link-name" >{text}</p>
             </div>
             <div className="action-container">
-                <img src={copy} alt="copy" onClick={handleClick} />
+                <div className="img-container" data-val={"Copy"}>
+                    <img data-content="Copy" src={copy} alt="copy" onClick={handleClick} />
+                </div>
                 {/* eslint-disable-next-line */}
                 <a onClick={(e: any) => { e.stopPropagation()}} href={address} target="_blank" >
-                    <img src={goto} alt="go to"/>
+                    <div className="img-container">
+                        <img data-content="Visit" src={goto} alt="go to"/>
+                    </div>
                 </a>
-                <img src={!isEditing ? edit : save} alt="edit_link" onClick={() => setIsEditing((prevState) => !prevState)} />
-                <img src={deleteIcon} alt="edit_link" onClick={()=> dispatch(deleteLink(id))} />
+                
+                <img data-content={`${!isEditing ? "Edit" : "Save"}`} src={!isEditing ? edit : save} alt="edit_link" onClick={() => setIsEditing((prevState) => !prevState)} />
+                <img data-content="Delete" src={deleteIcon} alt="edit_link" onClick={()=> dispatch(deleteLink(id))} />
                 
             </div>
         </div>

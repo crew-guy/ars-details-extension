@@ -19,7 +19,7 @@ const LinkForm:React.FC<ILinkForm> = ({ id, address,imgSrc, text}) => {
         text: text
     })
     return (
-        <form>
+        <form className='flex flex-col items-stretch justify-start p-2 rounded-md bg-gray-300 mt-4' >
             <FormInput
                 label="Link Name"
                 handleChange={(e:any) => setInputs({...inputs, text: e.target.value})}

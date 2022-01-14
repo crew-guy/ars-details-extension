@@ -9,9 +9,9 @@ interface IFormInput{
 
 const FormInput:React.FC<IFormInput> = ({label,handleChange, value }) => {
     return (
-        <div className='flex flex-col justify-start items-stretch'>
-            <label htmlFor={label} className="text-md text-sky-500 flex flex-row justify-start"></label>
-            <input title={label} id={label} type="text" value={value} onChange={handleChange} />
+        <div className='flex flex-col m-2 justify-start items-start'>
+            <label htmlFor={label} className="flex-1 text-md text-sky-500 flex flex-row font-semibold justify-start">{ label}</label>
+            <input title={label} id={label} className='flex-2 border-none outline-none' type="text" value={value} onChange={handleChange} />
         </div>
     )
 }
