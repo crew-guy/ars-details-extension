@@ -1,4 +1,4 @@
-import { deleteLink, LinkI } from '@features/linkSlice'
+import { deleteLink, LinkI } from '../redux/features/linkSlice'
 import React, { useRef, useState } from 'react'
 import deleteIcon from '../assets/images/delete.png'
 import copy from '../assets/images/copy.png'
@@ -6,7 +6,7 @@ import edit from '../assets/images/edit.png'
 import save from '../assets/images/save.png'
 import goto from '../assets/images/goto.png'
 import { useDispatch } from 'react-redux'
-import { AppDispatch } from '@redux/store'
+import { AppDispatch } from '../redux/store'
 import LinkForm from './LinkForm'
 
 
@@ -26,8 +26,9 @@ const Link: React.FC<LinkI> = ({ id, text, imgSrc, address }) => {
 
 
     return (
-        <div className="link-container" ref={ref} data-value={address} onClick={handleClick}  >
-            <div className="info-container">
+        <>
+        <div className="link-container" ref={ref} data-value={address} >
+            <div className="info-container" onClick={handleClick} >
                 <div className="img-container">
                     <img src={imgSrc} alt="" />
                 </div>
@@ -39,12 +40,13 @@ const Link: React.FC<LinkI> = ({ id, text, imgSrc, address }) => {
                 <a onClick={(e: any) => { e.stopPropagation()}} href={address} target="_blank" >
                     <img src={goto} alt="go to"/>
                 </a>
-                <img src={isEditing ? edit : save} alt="edit_link" onClick={() => setIsEditing((prevState) => !prevState)} />
-                {isEditing && <LinkForm id={id} address={address} imgSrc={imgSrc} text={text} />}
+                <img src={!isEditing ? edit : save} alt="edit_link" onClick={() => setIsEditing((prevState) => !prevState)} />
                 <img src={deleteIcon} alt="edit_link" onClick={()=> dispatch(deleteLink(id))} />
                 
             </div>
         </div>
+        { isEditing && <LinkForm id={id} address={address} imgSrc={imgSrc} text={text} /> }
+        </>
     )
 }
 

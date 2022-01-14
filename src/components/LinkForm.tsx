@@ -1,5 +1,5 @@
-import { addLink, updateLink } from '@features/linkSlice'
-import { AppDispatch } from '@redux/store'
+import { addLink, updateLink } from '../redux/features/linkSlice'
+import { AppDispatch } from '../redux/store'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import FormInput from './FormInput'
@@ -14,26 +14,26 @@ interface ILinkForm {
 const LinkForm:React.FC<ILinkForm> = ({ id, address,imgSrc, text}) => {
     const dispatch: AppDispatch = useDispatch()
     const [inputs, setInputs] = useState({
-        address: address ? address : '',
-        imgSrc: imgSrc ? imgSrc : '',
-        text: text ? text : ''
+        address: address,
+        imgSrc: imgSrc,
+        text: text
     })
     return (
         <form>
             <FormInput
                 label="Link Name"
                 handleChange={(e:any) => setInputs({...inputs, text: e.target.value})}
-                value={text}
+                value={inputs.text}
             />
             <FormInput
                 label="Link Address"
                 handleChange={(e:any) => setInputs({...inputs, address: e.target.value})}
-                value={address}
+                value={inputs.address}
             />
             <FormInput
                 label="Link Image URL"
                 handleChange={(e:any) => setInputs({...inputs, imgSrc: e.target.value})}
-                value={imgSrc}
+                value={inputs.imgSrc}
             />
             <button
                 className="rounded-sm bg-gray-600 text-white font-semibold"

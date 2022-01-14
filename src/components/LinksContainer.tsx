@@ -3,6 +3,7 @@ import { RootState } from '@redux/store'
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import Link from './Link'
+import LinkForm from './LinkForm'
 
 const LinksContainer = () => {
     const links = useSelector((state:RootState)=> state.links)
@@ -19,13 +20,18 @@ const LinksContainer = () => {
                 />
             )}
             <button
-                className="rounded-sm bg-gray-600 text-white font-semibold"
+                className="rounded-sm bg-gray-600 my-2 text-white font-semibold"
                 onClick={() => {
                     setIsAdding((prevState) => !prevState)
                 }}
             >
-                {isAdding ?"Add Link" : "Discard"}
+                {!isAdding ? "Add Link" : "Discard"}
             </button>
+            {isAdding && <LinkForm
+                text=''
+                address=''
+                imgSrc=''
+            />}
         </div>
     )
 }

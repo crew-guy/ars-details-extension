@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
 import './assets/css/styles.css'
 import './App.css';
+import LinksContainer from './components/LinksContainer';
 
 function App() {
   return (
     <div className="App">
       <h1 className="title">Quick Links</h1>
-      
+      <LinksContainer/>
     </div>
   );
 }
