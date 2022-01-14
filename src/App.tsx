@@ -1,15 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './assets/css/styles.css'
 import './App.css';
-import Link from './components/Link';
+import Links from './components/Link';
 import ars from './assets/images/ars.png'
 import github from './assets/images/github.png'
 const psl = require('psl')
-
-interface LinkI {
-  imgSrc: string,
-  name: string,
-}
 
 function App() {
   return (
@@ -17,7 +12,7 @@ function App() {
       <h1 className="title">Quick Links</h1>
       <div className="links-container">
         <Link
-          imgSrc={getFavicon("https://www.linkedin.com/in/ankit-sanghvi-99237b1a0/")}
+          imgSrc={getFavicon("https://www.linkedin.com/in/")}
           text={'LinkedIn'}
           address={"https://www.linkedin.com/in/ankit-sanghvi-99237b1a0/"}
         />
@@ -41,16 +36,12 @@ function App() {
           text={'Calendly'}
           address={"https://calendly.com/ankit-sanghvi/discuss"}
         />
-
       </div>
     </div>
   );
 }
 
 const getFavicon = (string: string) => {
-  //? Via regex
-  // const reg = new RegExp("/^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n?]+)/img")
-
   //? Via the pkg "psl"
   const hostname = psl.parse(string).domain
   return `https://s2.googleusercontent.com/s2/favicons?domain_url=${hostname}`

@@ -2,11 +2,6 @@ import React, { useRef } from 'react'
 import copy from '../assets/images/copy.png'
 import goto from '../assets/images/goto.png'
 
-interface LinkI {
-    text: string,
-    imgSrc: string,
-    address:string
-}
 
 const Link: React.FC<LinkI> = ({ text, imgSrc, address }) => {
     const ref = useRef<HTMLDivElement>(null)
