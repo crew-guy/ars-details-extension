@@ -1,7 +1,7 @@
 import { useCallback, useState, useEffect } from "react"
 
 // To use local storage to store, update info
-export function useLocalStorage(key:any, defaultValue:any) {
+export default function useLocalStorage(key:any, defaultValue:any) {
   return useStorage(key, defaultValue, window.localStorage)
 }
 
