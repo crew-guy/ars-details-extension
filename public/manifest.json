@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "version": "0.0.3",
+  "version": "1.0.0",
   "short_name": "Quick Links",
   "name": "Quick Links Manager",
   "description": "Application to store and access imp links really quickly",
@@ -23,6 +23,5 @@
     "128": "img/icon-128.png"
   },
   "options_page": "options.html",
-  "permissions": ["activeTab"],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
