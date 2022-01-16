@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Work+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
 $lightGrey: rgb(241, 241, 241);
 
 * {
@@ -6,7 +6,7 @@ $lightGrey: rgb(241, 241, 241);
 	background: white;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Roboto';
+	font-family: 'Noto Sans';
 }
 
 @mixin flexbox($flexDirection, $justifyContent, $alignItems) {
@@ -31,7 +31,7 @@ $lightGrey: rgb(241, 241, 241);
 	@include flexbox(column, flex-start, stretch);
 	.link-container {
 		background: $lightGrey;
-		font-family: 'Roboto';
+		font-family: 'Noto Sans';
 		font-size: 1rem;
 		@include flexbox(row, space-between, center);
 		padding: 0.7rem;
@@ -58,7 +58,7 @@ $lightGrey: rgb(241, 241, 241);
 			p {
 				margin-left: 0.3rem;
 				margin-right: 5rem;
-				font-family: 'Roboto';
+				font-family: 'Noto Sans';
 				text-decoration: none;
 				background: $lightGrey;
 				color: black;
