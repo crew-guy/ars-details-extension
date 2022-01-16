@@ -31,7 +31,7 @@ const LinkForm:React.FC<ILinkForm> = ({ id, address,imgSrc, text}) => {
                 value={inputs.address}
             />
             <FormInput
-                label="Link Image URL"
+                label="Link Image URL (optional)"
                 handleChange={(e:any) => setInputs({...inputs, imgSrc: e.target.value})}
                 value={inputs.imgSrc}
             />

@@ -1,22 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
-
-@font-face {
-	font-family: 'Regular';
-	src: url('../fonts/SF\ Pro.OTF');
-}
-@font-face {
-	font-family: 'Light';
-	src: url('../fonts/SF\ Pro\ Light.OTF');
-}
-@font-face {
-	font-family: 'Medium';
-	src: url('../fonts/SF\ Pro\ Medium.OTF');
-}
-@font-face {
-	font-family: 'Bold';
-	src: url('../fonts/SF\ Pro\ Bold.OTF');
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Work+Sans:wght@400;500;600&display=swap');
 $lightGrey: rgb(241, 241, 241);
 
 * {
@@ -24,7 +6,7 @@ $lightGrey: rgb(241, 241, 241);
 	background: white;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Regular';
+	font-family: 'Roboto';
 }
 
 @mixin flexbox($flexDirection, $justifyContent, $alignItems) {
@@ -49,7 +31,7 @@ $lightGrey: rgb(241, 241, 241);
 	@include flexbox(column, flex-start, stretch);
 	.link-container {
 		background: $lightGrey;
-		font-family: 'Regular';
+		font-family: 'Roboto';
 		font-size: 1rem;
 		@include flexbox(row, space-between, center);
 		padding: 0.7rem;
@@ -76,7 +58,7 @@ $lightGrey: rgb(241, 241, 241);
 			p {
 				margin-left: 0.3rem;
 				margin-right: 5rem;
-				font-family: 'Regular';
+				font-family: 'Roboto';
 				text-decoration: none;
 				background: $lightGrey;
 				color: black;
